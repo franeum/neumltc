@@ -49,9 +49,6 @@ void setup_neum0x2eltc0x2edec_tilde(void)
     mbutombutombuto_class = class_new(gensym("neum.ltc.dec~"), (t_newmethod)ltc_new, (t_method)ltc_free, sizeof(t_ltc), 0, A_GIMME, 0);
     CLASS_MAINSIGNALIN(mbutombutombuto_class, t_ltc, x_val);
     class_addmethod(mbutombutombuto_class, (t_method)ltc_dsp, gensym("dsp"), A_CANT, 0);
-    //class_addmethod(mbutombutombuto_class, (t_method)ltc_setFps, gensym("fps"), A_DEFFLOAT, 0);
-    //class_addmethod(mbutombutombuto_class, (t_method)ltc_setMilliseconds, gensym("milliseconds"), A_FLOAT, 0);
-    //class_addmethod(mbutombutombuto_class, (t_method)ltc_setTime, gensym("time"), A_GIMME, 0);
 }
 
 
@@ -149,17 +146,21 @@ static t_int *ltc_perform(t_int *w)
         SMPTETimecode stime;
         ltc_frame_to_time(&stime, &x->frame.ltc, 1);
 
-        t_int quarter = 0;
-        t_float oct = 0;
+        //t_int quarter = 0;
+        //t_float oct = 0;
 
         t_atom timecode_list[4];
         SETFLOAT(timecode_list,stime.hours);
         SETFLOAT(timecode_list+1,stime.mins);
         SETFLOAT(timecode_list+2,stime.secs);
+        SETFLOAT(timecode_list+3,stime.frame);
+        outlet_list(x->msg_outlet, 0L, 4, timecode_list);
+
         // proviamo a far uscire solo 1/8 di secondo
 
         //SETFLOAT(timecode_list+3,stime.frame);
 
+        /*
         quarter = stime.frame % (25 / 8);
 
         if (quarter == 0) {
@@ -167,6 +168,7 @@ static t_int *ltc_perform(t_int *w)
             SETFLOAT(timecode_list+3, oct * 1000);
             outlet_list(x->msg_outlet, 0L, 4, timecode_list);
         }
+        */
         x->startTimeCode = stime;
         x->startTimeCodeChanged = 1;
     }
