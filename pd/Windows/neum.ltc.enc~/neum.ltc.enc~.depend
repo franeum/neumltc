@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\decoder.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"decoder.h"
+
+1556729672 c:\users\lattepanda\documents\neumltc\libltc\decoder.h
+	"ltc.h"
+
+1556729672 c:\users\lattepanda\documents\neumltc\libltc\ltc.h
+	<endian.h>
+	<stddef.h>
+
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\encoder.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"encoder.h"
+
+1556729672 c:\users\lattepanda\documents\neumltc\libltc\encoder.h
+	"ltc.h"
+
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\ltc.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"ltc.h"
+	"decoder.h"
+	"encoder.h"
+
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\timecode.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ltc.h"
+	<config.h>
+

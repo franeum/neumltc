@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\decoder.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"decoder.h"
+
+1556729672 c:\users\lattepanda\documents\neumltc\libltc\decoder.h
+	"ltc.h"
+
+1556729672 c:\users\lattepanda\documents\neumltc\libltc\ltc.h
+	<endian.h>
+	<stddef.h>
+
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\encoder.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"encoder.h"
+
+1556729672 c:\users\lattepanda\documents\neumltc\libltc\encoder.h
+	"ltc.h"
+
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\ltc.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"ltc.h"
+	"decoder.h"
+	"encoder.h"
+
+1556729672 source:c:\users\lattepanda\documents\neumltc\libltc\timecode.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ltc.h"
+	<config.h>
+
+1556732351 source:c:\users\lattepanda\documents\neumltc\pd\windows\neum.ltc.dec~\main.c
+	"../../m_pd.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"math.h"
+	"../../../libltc/ltc.h"
+	"../../../libltc/decoder.h"
+
+1556729674 c:\users\lattepanda\documents\neumltc\pd\m_pd.h
+	<stddef.h>
+	<stdint.h>
+	<stdio.h>
+
