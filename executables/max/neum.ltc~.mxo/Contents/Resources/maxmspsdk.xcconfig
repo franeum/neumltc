@@ -16,11 +16,11 @@ ARCHS = x86_64
 
 
 // Paths
-//C74SUPPORT = $(SRCROOT)/../../../c74support
-C74SUPPORT = /Users/neum/Documents/max-sdk-8.0.3/source/c74support
+C74SUPPORT = $(SRCROOT)/../../c74support
+//C74SUPPORT = /Users/codex/Documents/max-sdk-8.0.3/source/c74support
 HEADER_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
 FRAMEWORK_SEARCH_PATHS = "$(C74SUPPORT)/max-includes" "$(C74SUPPORT)/msp-includes" "$(C74SUPPORT)/jit-includes"
-DSTROOT = $(SRCROOT)/../../executables/max
+DSTROOT = $(SRCROOT)/../../../executables/max
 // (This next path is relative to DSTROOT)
 INSTALL_PATH = /
 
