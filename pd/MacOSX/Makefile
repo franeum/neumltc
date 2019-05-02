@@ -11,8 +11,8 @@ included := \
 cflags  := -I$(inc) -I..
 
 neum.ltc.dec~.class.sources := neum.ltc_decoder_tilde.c
-neum.ltc.enc~.class.sources := neum.ltc_encoder_tilde.c
-neum.ltc~.class.sources := neum.ltc_tilde.c
+#neum.ltc.enc~.class.sources := neum.ltc_encoder_tilde.c
+#neum.ltc~.class.sources := neum.ltc_tilde.c
 
 common.sources := $(included)
 externalsdir := ../../executables/pd

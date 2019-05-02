@@ -1,0 +1,17 @@
+#N canvas 444 396 735 304 10;
+#X obj 111 122 neum.ltc.enc~ 0;
+#X obj 111 203 neum.ltc.dec~;
+#X obj 111 264 print;
+#X text 198 204 decode a ltc signal in any fps format;
+#X text 211 117 encode a ltc signal. A arg set fps: 0 for 24 fps \,
+1 for 25 \, 2 for 29.97 3 for 30;
+#X text 122 235 <- output is a list;
+#X msg 111 36 milliseconds 1.34735e+06;
+#X msg 132 73 time 10 5 24 13;
+#X text 235 75 set start time in hr min sec frame format;
+#X text 243 37 set start time in milliseconds;
+#X text 124 163 <- output is signal;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
