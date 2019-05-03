@@ -11,10 +11,8 @@
 BEGIN_USING_C_LINKAGE
 
 // symbol macros which may be swapped to use common symbol pointers for performance
-#ifndef USESYM
 #define USESYM(x)	gensym(#x)
 //#define USESYM(x)	_sym_##x
-#endif
 
 // macros for attributes
 // class attributes are almost universally attr_offset, except for class static attributes
@@ -35,7 +33,7 @@ BEGIN_USING_C_LINKAGE
 
 
 /**
-	Create a long integer attribute and add it to a Max class.
+	Create a t_atom_long integer attribute and add it to a Max class.
 
 	@ingroup	attr
 	@param	c				The class pointer.

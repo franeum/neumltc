@@ -57,6 +57,16 @@
 #include "jit.mac.h"
 #else
 #define PREFER_POST_INC
+#ifdef WIN_JITLIB
+//used by jitlib only
+#ifdef C74_USING_QUICKTIME
+#include "QTML.h"
+#include "jit.mac.h"
+#define ushort ushort
+#define FREDDIE ushort
+#define GetPixRowBytes QTGetPixMapHandleRowBytes
+#endif  // #ifdef C74_USING_QUICKTIME
+#endif //WIN_JITLIB
 #endif
 
 // weak link macros
@@ -70,6 +80,13 @@
 #include "jit.max.h"
 #endif
 
+//load test
+
+#ifdef __APPLE_CC__
+#define IS_JIT_LIBRARY_AVAILABLE (jit_object_method != NULL)
+#else
+#define IS_JIT_LIBRARY_AVAILABLE (jit_object_method != NULL)
+#endif
 
 //endian issues
 #include "jit.byteorder.h"
@@ -77,9 +94,24 @@
 //thread related
 #include "jit.critical.h"
 
+// disable CG entirely
+#if 0 //!defined(C74_X64)
+#define C74_SUPPORT_CG
+#endif
+
+//vector
+#ifdef WIN_VERSION
+#define JIT_CAN_ALTIVEC 0
+#else
+// may want a better way to detect Mac Intel
+#if __i386__
+#define JIT_CAN_ALTIVEC 0
+#else
 // rbs: altivec is never true now, we should clean this stuff up
 #define JIT_CAN_ALTIVEC 0
-JIT_EX_DATA long _jit_altivec;
+#endif
+
+#endif // !WIN_VERSION
 
 //speed macros
 #ifdef PREFER_POST_INC

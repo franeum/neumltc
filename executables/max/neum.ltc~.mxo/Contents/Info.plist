@@ -3,42 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>15B42</string>
+	<string>15G22010</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>JitterAPI</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.cycling74.JitterAPI</string>
+	<string>neum.ltc~</string>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
+	<string>8.0.2</string>
+	<key>CFBundleLongVersionString</key>
+	<string>neum.ltc~ 8.0.2, Copyright 2014 Cycling '74</string>
 	<key>CFBundlePackageType</key>
-	<string>FMWK</string>
+	<string>iLaX</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7.0</string>
+	<string>8.0.2</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>max2</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.7.0</string>
+	<string>8.0.2</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>7B1005</string>
+	<string>8C1002</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>15A278</string>
+	<string>16C58</string>
 	<key>DTSDKName</key>
-	<string>macosx10.11</string>
+	<string>macosx10.12</string>
 	<key>DTXcode</key>
-	<string>0711</string>
+	<string>0821</string>
 	<key>DTXcodeBuild</key>
-	<string>7B1005</string>
+	<string>8C1002</string>
 </dict>
 </plist>
