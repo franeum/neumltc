@@ -9,7 +9,9 @@ neumltc~
 #include "encoder.h"
 #include "decoder.h"
 
-void *neumltc_class;
+//void *neumltc_class;
+// global class pointer variable
+static t_class *neumltc_class = NULL;
 
 typedef struct _neumltc {
 	t_pxobject x_obj;
