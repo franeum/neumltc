@@ -23,13 +23,13 @@
 		2FBBEAE508F335360078DB84 /* neum.ltc~.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "neum.ltc~.mxo"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1197EF227460BD00112EF9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB1197F3227460BD00112EF9 /* neumltc~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "neumltc~.c"; sourceTree = "<group>"; };
-		DBCDCC6922766A4C002FE648 /* encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encoder.h; path = ../../libltc/encoder.h; sourceTree = "<group>"; };
-		DBCDCC6A22766A4C002FE648 /* ltc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ltc.h; path = ../../libltc/ltc.h; sourceTree = "<group>"; };
-		DBCDCC6B22766A4C002FE648 /* encoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = encoder.c; path = ../../libltc/encoder.c; sourceTree = "<group>"; };
-		DBCDCC6C22766A4D002FE648 /* ltc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ltc.c; path = ../../libltc/ltc.c; sourceTree = "<group>"; };
-		DBCDCC6D22766A4D002FE648 /* decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = decoder.c; path = ../../libltc/decoder.c; sourceTree = "<group>"; };
-		DBCDCC6E22766A4D002FE648 /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = decoder.h; path = ../../libltc/decoder.h; sourceTree = "<group>"; };
-		DBCDCC6F22766A4D002FE648 /* timecode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timecode.c; path = ../../libltc/timecode.c; sourceTree = "<group>"; };
+		DBCDCC6922766A4C002FE648 /* encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encoder.h; path = ../../../libltc/encoder.h; sourceTree = "<group>"; };
+		DBCDCC6A22766A4C002FE648 /* ltc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ltc.h; path = ../../../libltc/ltc.h; sourceTree = "<group>"; };
+		DBCDCC6B22766A4C002FE648 /* encoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = encoder.c; path = ../../../libltc/encoder.c; sourceTree = "<group>"; };
+		DBCDCC6C22766A4D002FE648 /* ltc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ltc.c; path = ../../../libltc/ltc.c; sourceTree = "<group>"; };
+		DBCDCC6D22766A4D002FE648 /* decoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = decoder.c; path = ../../../libltc/decoder.c; sourceTree = "<group>"; };
+		DBCDCC6E22766A4D002FE648 /* decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = decoder.h; path = ../../../libltc/decoder.h; sourceTree = "<group>"; };
+		DBCDCC6F22766A4D002FE648 /* timecode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timecode.c; path = ../../../libltc/timecode.c; sourceTree = "<group>"; };
 		DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = maxmspsdk.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +175,7 @@
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -212,6 +213,7 @@
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -246,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -259,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				INFOPLIST_FILE = info.plist;
