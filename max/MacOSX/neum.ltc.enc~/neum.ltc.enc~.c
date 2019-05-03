@@ -50,7 +50,7 @@ void ext_main(void *r)
 	class_addmethod(c, (method)neumltc_setTime, "time", A_GIMME, 0);
 	class_addmethod(c, (method)neumltc_assist, "assist", A_CANT,0);
 	class_dspinit(c);
-    
+
     CLASS_ATTR_LONG(c, "fps", 0, t_neumltc, set_fps);
     CLASS_ATTR_ACCESSORS(c, "fps", NULL, neumltc_setFps);
     CLASS_ATTR_FILTER_CLIP(c, "fps", 0, 3);
@@ -79,7 +79,7 @@ void *neumltc_new(t_symbol *s, long argc, t_atom *argv)
 
 	const char timezone[6] = "+0100";
 	strcpy(x->startTimeCode.timezone, timezone);
-    
+
 	x->startTimeCode.years = 0;
 	x->startTimeCode.months = 0;
 	x->startTimeCode.days = 0;
@@ -131,7 +131,7 @@ void neumltc_free(t_neumltc *x)
 void neumltc_setFps(t_neumltc *x, t_object *attr, long ac, t_atom *av)
 {
     long val = atom_getlong(av);
-    
+
 	switch (val) {
 		case 0:
             x->fps = 24;
@@ -187,13 +187,13 @@ void neumltc_setMilliseconds(t_neumltc *x, double f)
 void neumltc_perform64(t_neumltc *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long n, long flags, void *userparam)
 {
 	t_double *outp = outs[0];
-	
+
     while (n--) {
         if (x->smpteBufferTime >= x->smpteBufferLength) {
             if (x->startTimeCodeChanged) {
                 ltc_encoder_set_timecode(x->encoder, &x->startTimeCode);
                 x->startTimeCodeChanged = 0;
-            }
+            } else ltc_encoder_inc_timecode(x->encoder);
 
             SMPTETimecode st;
             ltc_encoder_get_timecode(x->encoder, &st);
@@ -212,7 +212,7 @@ void neumltc_perform64(t_neumltc *x, t_object *dsp64, double **ins, long numins,
         *outp++ = x->smpteBuffer[x->smpteBufferTime] / 128. - 1.;
         x->smpteBufferTime++;
     }
-	
+
 }
 
 // method called when dsp is turned on
