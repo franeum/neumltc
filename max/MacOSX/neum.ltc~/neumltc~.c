@@ -1,5 +1,5 @@
 /**
-neumltc~
+neum.ltc~
 */
 
 #include "ext.h"
@@ -157,7 +157,7 @@ void neumltc_free(t_neumltc *x)
 void neumltc_setFps(t_neumltc *x, t_object *attr, long ac, t_atom *av)
 {
     long val = atom_getlong(av);
-    
+
 	switch (val) {
 		case 0:
             x->fps = 24;
@@ -184,7 +184,7 @@ void neumltc_setFps(t_neumltc *x, t_object *attr, long ac, t_atom *av)
 void neumltc_setAutoincrease(t_neumltc *x, t_object *attr, long ac, t_atom *av)
 {
     long value = atom_getlong(av);
-    
+
     if (value <= 0) {
         value = 0;
         post("neum.ltc~: set as DECODER");

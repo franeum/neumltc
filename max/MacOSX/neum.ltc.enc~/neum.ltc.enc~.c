@@ -20,9 +20,7 @@ typedef struct _neumltc {
 	long x_connected;
 	double fps;
 	long set_fps;
-	//long auto_increase;
 	LTCEncoder *encoder;
-	LTCDecoder *decoder;
 	double length; // in seconds
 	double sampleRate;
 	ltcsnd_sample_t *smpteBuffer;
@@ -31,8 +29,6 @@ typedef struct _neumltc {
 	SMPTETimecode startTimeCode;
 	int startTimeCodeChanged;
 	LTCFrameExt frame;
-	//unsigned int dec_bufpos;
-	//float *dec_buffer; // has to contain 256 samples...
 } t_neumltc;
 
 
@@ -40,7 +36,6 @@ void *neumltc_new(t_symbol *s, long argc, t_atom *argv);
 void neumltc_dsp64(t_neumltc *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags);
 void neumltc_assist(t_neumltc *x, void *b, long m, long a, char *s);
 void neumltc_setFps(t_neumltc *x, t_object *attr, long ac, t_atom *av);
-//void neumltc_setAutoincrease(t_neumltc *x, t_object *attr, long ac, t_atom *av);
 void neumltc_setTime(t_neumltc *x, t_symbol *s, long argc, t_atom *argv);
 void neumltc_setMilliseconds(t_neumltc *x, double f);
 void neumltc_free(t_neumltc *x);
@@ -54,14 +49,8 @@ void ext_main(void *r)
 	class_addmethod(c, (method)neumltc_setMilliseconds, "milliseconds", A_FLOAT, 0);
 	class_addmethod(c, (method)neumltc_setTime, "time", A_GIMME, 0);
 	class_addmethod(c, (method)neumltc_assist, "assist", A_CANT,0);
-	class_dspinit(c);	// must call this function for MSP object classes
-
-    /*
-	CLASS_ATTR_LONG(c, "op", 0, t_neumltc, auto_increase);
-    CLASS_ATTR_ACCESSORS(c, "op", NULL, neumltc_setAutoincrease);
-    CLASS_ATTR_ENUMINDEX(c, "op", 0, "decoder encoder");
-    CLASS_ATTR_DEFAULT(c,"op", 0, "1");
-     */
+	class_dspinit(c);
+    
     CLASS_ATTR_LONG(c, "fps", 0, t_neumltc, set_fps);
     CLASS_ATTR_ACCESSORS(c, "fps", NULL, neumltc_setFps);
     CLASS_ATTR_FILTER_CLIP(c, "fps", 0, 3);
@@ -84,7 +73,6 @@ void *neumltc_new(t_symbol *s, long argc, t_atom *argv)
 	x->set_fps = 0;
 	x->fps = 24;
 	x->length = 20;
-	//x->auto_increase = 1;
 	x->startTimeCodeChanged = 1;
 	x->smpteBufferTime = 0;
 	x->smpteBufferLength = 0;
@@ -106,19 +94,6 @@ void *neumltc_new(t_symbol *s, long argc, t_atom *argv)
 	ltc_encoder_set_filter(x->encoder, 0);
 	ltc_encoder_set_filter(x->encoder, 25.0);
 	ltc_encoder_set_volume(x->encoder, -3.0);
-
-    /*
-	// decoder
-	int apv = sys_getsr()*1/25;
-
-	x->dec_bufpos = 0;
-	x->dec_buffer = (float*)sysmem_newptr(sizeof(float) * 256);// allocate buffer
-	x->decoder = ltc_decoder_create(apv, 32);
-
-	attr_args_process(x, argc, argv);
-     */
-	//neumltc_setAutoincrease(x, x->auto_increase);
-	//neumltc_setFps(x, x->set_fps);
 
 	return (x);
 }
@@ -153,7 +128,6 @@ void neumltc_free(t_neumltc *x)
 	ltc_encoder_free(x->encoder);
 }
 
-//void neumltc_setFps(t_neumltc *x, long value)
 void neumltc_setFps(t_neumltc *x, t_object *attr, long ac, t_atom *av)
 {
     long val = atom_getlong(av);
@@ -212,22 +186,7 @@ void neumltc_setMilliseconds(t_neumltc *x, double f)
 // our perform method if both signal inlets are connected
 void neumltc_perform64(t_neumltc *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long n, long flags, void *userparam)
 {
-	//t_double *inp =  ins[0];
 	t_double *outp = outs[0];
-	// check if timecode signal at input
-	//bool ltc_input = false;
-	//t_double* input = inp;
-	// search for first non-zero sample
-	/*
-    for (int i = 0; i < n; i++) {
-		if ((*input++) != 0.f) {
-			ltc_input = true;
-			break;
-		}
-	}
-     */
-	
-	// generate timecode
 	
     while (n--) {
         if (x->smpteBufferTime >= x->smpteBufferLength) {

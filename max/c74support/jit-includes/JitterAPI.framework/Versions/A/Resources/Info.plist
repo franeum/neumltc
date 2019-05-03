@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
+<<<<<<< HEAD:max/c74support/jit-includes/JitterAPI.framework/Versions/A/Resources/Info.plist
 	<string>15B42</string>
+=======
+	<string>17G3025</string>
+>>>>>>> 51d4558e71f659282d1eab236b0c77ca4bb6d7da:executables/max/neum.ltc~.mxo/Contents/Info.plist
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
@@ -29,6 +33,7 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
+<<<<<<< HEAD:max/c74support/jit-includes/JitterAPI.framework/Versions/A/Resources/Info.plist
 	<string>7B1005</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
@@ -40,5 +45,18 @@
 	<string>0711</string>
 	<key>DTXcodeBuild</key>
 	<string>7B1005</string>
+=======
+	<string>10B61</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>18B71</string>
+	<key>DTSDKName</key>
+	<string>macosx10.14</string>
+	<key>DTXcode</key>
+	<string>1010</string>
+	<key>DTXcodeBuild</key>
+	<string>10B61</string>
+>>>>>>> 51d4558e71f659282d1eab236b0c77ca4bb6d7da:executables/max/neum.ltc~.mxo/Contents/Info.plist
 </dict>
 </plist>

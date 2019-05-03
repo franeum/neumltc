@@ -175,7 +175,11 @@
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+<<<<<<< HEAD
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+=======
+				ARCHS = "$(ARCHS_STANDARD)";
+>>>>>>> 51d4558e71f659282d1eab236b0c77ca4bb6d7da
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -213,7 +217,11 @@
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+<<<<<<< HEAD
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+=======
+				ARCHS = "$(ARCHS_STANDARD)";
+>>>>>>> 51d4558e71f659282d1eab236b0c77ca4bb6d7da
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -248,7 +256,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
+<<<<<<< HEAD
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+=======
+				ARCHS = "$(ARCHS_STANDARD)";
+>>>>>>> 51d4558e71f659282d1eab236b0c77ca4bb6d7da
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -262,7 +274,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBFB2F8E227463A5004387F6 /* maxmspsdk.xcconfig */;
 			buildSettings = {
+<<<<<<< HEAD
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+=======
+				ARCHS = "$(ARCHS_STANDARD)";
+>>>>>>> 51d4558e71f659282d1eab236b0c77ca4bb6d7da
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				INFOPLIST_FILE = info.plist;
