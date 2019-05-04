@@ -1,3 +1,3 @@
-max-includes/
-msp-includes/
-jit-includes/
+**/max-includes/
+**/msp-includes/
+**/jit-includes/
